@@ -1,0 +1,43 @@
+import time
+
+print("This is a quadratic \nequation of one \nvariable: aX^2+bX+c=0")
+
+#Split multiple inputs into separate lines
+a =int(input("input a="))
+#Judgment "a" cannot be "0"
+while a == 0:
+	print("\"a\" cannot be equal to \"0\"")
+	a =int(input("input a="))
+
+b =int(input("input b="))
+c =int(input("input c="))
+
+delta = b**2-4*a*c
+
+def function1(a,b):
+	print("Start calculation...")
+	x_one = (-b)/(2*a)
+	print("Computation time:",time.clock(),"s")
+	print("Solution:")
+	print(" X1_&_X2 =",x_one)	
+
+def function2(a,b,c):
+	print("Start calculation...")
+	x_one = (-b+(b**2-4*a*c)**0.5)/(2*a)
+	x_two = (-b-(b**2-4*a*c)**0.5)/(2*a)
+	print("Computation time:",time.clock(),"s")
+	print("Solution:")
+	print(" |X1 =",x_one)
+	print(" | ")
+	print(" |X2 =",x_two)
+
+if delta < 0:
+	print("The equation has no real root!")
+elif delta == 0:
+	time.clock()#Computation time
+	function1(a,b)
+else:
+	time.clock()
+	function2(a,b,c)
+
+
